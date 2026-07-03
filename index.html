@@ -19,7 +19,7 @@
   --lav:#9B7DC8;--lav-l:#EDE7F8;--sky:#5B9BD5;--sky-l:#E3EFF9;
   --bg:#FBF8F4;--white:#FFFFFF;--ink:#2D2926;--muted:#9A9088;--border:#EDE8E2;
 }
-html,body{height:100%;overflow-x:hidden}
+html{overflow-x:hidden}body{min-height:100%;overflow-x:hidden}
 body{font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);max-width:430px;margin:0 auto;padding-bottom:72px}
 input,select,textarea,button{font-family:inherit;font-size:13px}
 
@@ -50,7 +50,7 @@ input,select,textarea,button{font-family:inherit;font-size:13px}
 .tab-btn .tl{font-size:9px;font-weight:600;margin-top:1px}
 
 /* PANELS */
-.panel{display:none;padding:14px 16px 0}
+.panel{display:none;padding:14px 16px 0;min-height:calc(100vh - 200px)}
 .panel.active{display:block}
 
 /* CARDS */
@@ -948,7 +948,4 @@ async function deleteOutlookEv(msId){
       syncOutlook();
     }catch(e){console.error("MS auth failed",e);}
   } else {
-    const t=await getToken();
-    if(t){
-      try{const me=await graphFetch("
-                                    
+    const t=await getToke
